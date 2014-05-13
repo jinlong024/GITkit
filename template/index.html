@@ -1,0 +1,70 @@
+<!--
+
+<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jqueryui/1.8.2/jquery-ui.min.js"></script>
+&lt;!&ndash;<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/googleapis/0.0.4/googleapis.min.js"></script>&ndash;&gt;
+<script type="text/javascript" src="//ajax.googleapis.com/jsapi"></script>
+&lt;!&ndash;<script type="text/javascript">&ndash;&gt;
+  &lt;!&ndash;google.load("identitytoolkit", "1", {packages: ["ac"], language:"en"});&ndash;&gt;
+&lt;!&ndash;</script>&ndash;&gt;
+<script type="text/javascript">
+    function load(){
+        google.load("identitytoolkit", "1.0", {packages: ["ac"] , callback:callback});
+    }
+  function callback() {
+    window.google.identitytoolkit.setConfig({
+        developerKey: "AIzaSyCmAkscOxNO4r5JVw0AuzfHVWVMS9qnasg",
+        companyName: "vm",
+        callbackUrl: "http://localhost:8080/callback",
+        realm: "",
+        userStatusUrl: "/userStatus",
+        loginUrl: "/login",
+        signupUrl: "/signup",
+        homeUrl: "/",
+        logoutUrl: "/sigout",
+        idps: ["Gmail", "Yahoo", "AOL", "Hotmail"],
+        tryFederatedFirst: true,
+        useCachedUserStatus: true
+    });
+    $("#navbar").accountChooser();
+  }
+</script>
+<script type="text/javascript" src="https://apis.google.com/js/client.js?onload=load"></script>
+&lt;!&ndash; Insert the navbar element somewhere in the HTML page &ndash;&gt;
+-->
+
+
+
+<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jqueryui/1.8.2/jquery-ui.min.js"></script>
+<script type="text/javascript" src="//ajax.googleapis.com/jsapi"></script>
+<script type="text/javascript" src="//www.accountchooser.com/client.js"></script>
+<script type="text/javascript">
+    function load() {
+        google.load("identitytoolkit", "2", {packages: ["ac"], language:"en", callback: callback});
+    }
+    function callback() {
+        window.google.identitytoolkit.setConfig({
+            developerKey: "AIzaSyCLlN2WncVy5u9PNvgbt-j98datSA5FlH8",
+            companyName: "vmware",
+            callbackUrl: "http://localhost:8080/callback",
+            realm: "",
+            userStatusUrl: "/gitkit",
+            loginUrl: "/gitkit",
+            signupUrl: "/signup.jsp",
+            homeUrl: "/home.jsp",
+            logoutUrl: "/logout",
+            idps: ["Gmail", "Yahoo", "AOL"],
+            tryFederatedFirst: true,
+            useContextParam: true,
+            language: "en"
+        });
+        window.google.identitytoolkit.init();
+    }
+</script>
+<script type="text/javascript" src="//apis.google.com/js/client.js?onload=load"></script>
+
+
+<div id="navbar"></div>
+
+
